@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "api" middleware group. Make something great!
+|
+*/
+
+require __DIR__ . '/api/authRoute.php';
+require __DIR__ . '/api/userRoute.php';
+require __DIR__ . '/api/customerRoute.php';
+require __DIR__ . '/api/countryRoute.php';
+require __DIR__ . '/api/priorityRoute.php';
+require __DIR__ . '/api/backgroundRoute.php';
+require __DIR__ . '/api/cityRoute.php';
+require __DIR__ . '/api/statusRoute.php';
+require __DIR__ . '/api/connectionCauseRoute.php';
+require __DIR__ . '/api/connectionMethodRoute.php';
+require __DIR__ . '/api/billTypeRoute.php';
+require __DIR__ . '/api/commentRoute.php';
+require __DIR__ . '/api/settingRoute.php';
+require __DIR__ . '/api/customerMovementRoutes.php';
+require __DIR__ . '/api/dashboardRoute.php';
+require __DIR__ . '/api/importRoute.php';
+require __DIR__ . '/api/waSaaSRoute.php';
+require __DIR__ . '/api/databaseRoute.php';
+Route::get('/', function () {
+    return 'CRM API running...';
+});
+Route::get(uri: '/check', action: function (): \Illuminate\Http\JsonResponse {
+    return response()->json(data: ['state' => 'CRM API running...']);
+});
+
+//region upload file to drive
+Route::get('/info', function () {
+    return 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+});
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
