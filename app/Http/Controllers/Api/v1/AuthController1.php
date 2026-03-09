@@ -15,10 +15,8 @@ class AuthController extends Controller
 {
     public function login(LoginRequest $request)
     {
-        // Log::alert($request);
         $user = User::where('user_name', $request->user_name)->where('active', true)->orWhere('email', $request->email)->first();
 
-        // Log::alert($user);
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json(
                 [
