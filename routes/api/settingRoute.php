@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\api\v1\LogFileController;
-use App\Http\Controllers\api\v1\SettingController;
-use App\Http\Controllers\api\v1\UtilityController;
+use App\Http\Controllers\Api\v1\LogFileController;
+use App\Http\Controllers\Api\v1\SettingController;
+use App\Http\Controllers\Api\v1\UtilityController;
 use Illuminate\Support\Facades\Route;
 
 

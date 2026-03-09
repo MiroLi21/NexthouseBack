@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\api\v1\PermissionController;
-use App\Http\Controllers\api\v1\RoleController;
-use App\Http\Controllers\api\v1\SectionController;
-use App\Http\Controllers\api\v1\UserController;
+use App\Http\Controllers\Api\v1\PermissionController;
+use App\Http\Controllers\Api\v1\RoleController;
+use App\Http\Controllers\Api\v1\SectionController;
+use App\Http\Controllers\Api\v1\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/user')->middleware(['auth:sanctum'])->group(function () {

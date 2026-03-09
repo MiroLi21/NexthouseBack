@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\api\v1\WaSaaSController;
+use App\Http\Controllers\Api\v1\WaSaaSController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/wasaas')->middleware(['auth:sanctum'])->group(function () {
